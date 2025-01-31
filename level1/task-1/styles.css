@@ -10,16 +10,18 @@ body {
 }
 
 nav {
+    display: flex;
+    justify-content: flex-end;
     position: absolute;
     top: 8rem;
-    right: 2px;
+    right: 2rem;
     /* border: 2px solid black; */
 }
 
 .navigation-menu {
     list-style: none;
     display: flex;
-    gap:4px
+    gap:10px
     
 }
 
@@ -170,4 +172,22 @@ header p {
 
 .book:hover {
     background-color: #0056b3;
+}
+
+.color-btn{
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-btn:hover{
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
