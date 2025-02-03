@@ -63,27 +63,25 @@ function hydroCalculator(){
 // function to count calorie intake
 function calorieCalculator() {
 
-    const breakfast = document.getElementById("breakfast").value.trim();
-    const lunch = document.getElementById("lunch").value.trim();
-    const dinner = document.getElementById("dinner").value.trim();
-    const snacks = document.getElementById("snacks").value.trim();
+    let breakfast = document.getElementById("breakfast");
+    let lunch = document.getElementById("lunch");
+    let dinner = document.getElementById("dinner");
+    let snacks = document.getElementById("snacks");
 
     if(breakfast === "" && lunch === "" && dinner === "" && snacks === ""){
         alert("Please enter at least one meal or snack!");
         return;
     }
+    breakfast = breakfast === "" ? 0 : Number(breakfast);
+    lunch = lunch === "" ? 0 : Number(lunch);
+    dinner = dinner === "" ? 0 : Number(dinner);
+    snacks = snacks === "" ? 0 : Number(snacks);
 
-    if(isNaN(breakfast) || isNaN(lunch) || isNaN(dinner) || isNaN(snacks) ||
-breakfast < 0 || lunch < 0 || dinner < 0 || snacks < 0)
-{
+    if(breakfast < 0 || lunch < 0 || dinner < 0 || snacks < 0)
+   {
     alert("Please enter valid non-negative numbers for calories.");
     return;
-}
-
-   breakfast = breakfast === "" ? 0 : Number(breakfast);
-   lunch = lunch === "" ? 0 : Number(lunch);
-   dinner = dinner === "" ? 0 : Number(dinner);
-   snacks = snacks === "" ? 0 : Number(snacks);
+   }
 
    const totalCalories = breakfast + lunch + dinner + snacks;
 
@@ -107,5 +105,9 @@ function switchTab(type){
     tabButton.forEach(btn => btn.classList.remove("active"));
 
     sections[type].style.display = "block";
-    document.querySelector(`.tab-btn[onclick="switchTab('${type}')"] `).classList.add("active");
+    document.querySelector(`.tab-btn[onclick="switchTab('${type}')"]`).classList.add("active");
 } 
+
+document.addEventListener("DOMContentLoaded", () => {
+    switchTab("hydration");
+});

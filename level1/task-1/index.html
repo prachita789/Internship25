@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HydroMax Bottle</title>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -49,46 +50,59 @@
             </div>
         </section>
 
-        <section class="calculator-section">
-            <h2>Hydration & Calorie Tracker</h2>
+        <div class="calculator-preorder-container">
 
-            <div class="switch-tab">
-                <button class="tab-btn active" onclick="switchTab('hydration')">Hydration</button>
-                <button class="tab-btn" onclick="switchTab('calorie')">Calorie Intake</button
-            </div>
 
-            <div id="hydration-calculator" class="calculator-content active">
-                <p>Find out how much water you should drink daily based on your weight:</p>
-                <form class="calculator-form">
-                    <label for="weight">Your Weight (kg):</label>
-                    <input type="number" id="weight" placeholder="Enter your weight" required>
-                    <button type="button" id="hydra-cal" onclick="hydroCalculator()">Calculate</button>
+            <section class="calculator-section">
+                <h2>Hydration & Calorie Tracker</h2>
+
+                <!-- tab button -->
+                <div class="switch-tab">
+                    <button class="tab-btn active" onclick="switchTab('hydration')">Hydration</button>
+                    <button class="tab-btn" onclick="switchTab('calorie')">Calorie Intake</button>
+                </div>
+
+                <!--Hydration calculator-->
+                <div id="hydration-calculator" class="calculator-content active">
+                    <p>Find out how much water you should drink daily based on your weight</p>
+                    <form class="calculator-form">
+                        <label for="weight">Your Weight (kg):</label>
+                        <input type="number" id="weight" class="labelFor" placeholder="Enter your weight" required>
+                        <button type="button" id="hydra-cal" onclick="hydroCalculator()">Calculate</button>
+                    </form>
+                    <p id="result"></p>
+                </div>
+
+                <!--Calorie Intake Calculator-->
+                <div id="calorie-calculator" class="calculator-content">
+                    <p>Track your daily calorie intake</p>
+                    <form class="calculator-form">
+                        <input type="number" id="breakfast" placeholder="Breakfast (kcal)">
+                        <input type="number" id="lunch" placeholder="Lunch (kcal)">
+                        <input type="number" id="dinner" placeholder="Dinner (kcal)">
+                        <input type="number" id="snacks" placeholder="Snacks (kcal)">
+                        <button type="button" id="cal-cal" onclick="calorieCalculator()">Calculate</button>
+
+                    </form>
+                    <p id="calorie-result"></p>
+                </div>
+
+
+            </section>
+
+            <section class="form-for-preorder">
+                <h2>Pre-Order Now!</h2>
+                <p>Be the first to get your HydroMax Bottle when it launches.</p>
+                <form class="form1" action="#" method="post">
+                    <input class="user-mail" type="email" placeholder="Enter your email" required>
+                    <button class="book" type="submit">Book Now</button>
                 </form>
-                <p id="result"></p>
-            </div>
+            </section>
+        </div>
 
-            <div id="calorie-calculator" class="calculator-content">
-                <p>Track your daily calorie intake:</p>
-                <form class="calculator-form">
-                    <input type="number" id="breakfast" placeholder="Breakfast (kcal)">
-                    <input type="number" id="lunch" placeholder="Lunch (kcal)">
-                    <input type="number" id="dinner" placeholder="Dinner (kcal)">
-                    <input type="number" id="snacks" placeholder="Snacks (kcal)">
-                    <button type="button" id="cal-cal" onclick="calorieCalculator()">Calculate</button>
 
-                </form>
-                <p id="calorie-result"></p>
-            </div>
-            
-        </section>
+        <section class="bulma">
 
-        <section class="form-for-preorder">
-            <h2>Pre-Order Now!</h2>
-            <p>Be the first to get your HydroMax Bottle when it launches.</p>
-            <form class="form1" action="#" method="post">
-                <input class="user-mail" type="email" placeholder="Enter your email" required>
-                <button class="book" type="submit">Book Now</button>
-            </form>
         </section>
     </main>
 

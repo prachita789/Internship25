@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/[email protected]/css/bulma.min.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -148,15 +150,11 @@ header p {
 }
 
 /* form */
-.form-for-preorder {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-
-}
+/* .form-for-preorder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
 
 .form-for-preorder h2 {
     font-size: 24px;
@@ -177,18 +175,26 @@ header p {
 }
 
 .book {
-    padding: 10px;
+    padding: 14px 20px;
     border: none;
     background-color: #007BFF;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .book:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.book:active{
+    transform: scale(0.98);
 }
 
 .color-btn{
@@ -212,7 +218,7 @@ header p {
 }
 
 .color-btn:active{
-    transform: scale(0.95);
+    transform: scale(0.98);
 }
 
 .color-btn i{
@@ -234,55 +240,122 @@ header p {
     transition: opacity 0.8s ease-out, transform 0.5s ease-out;
 }
 
-.hydration-calculator{
-    /* border: 2px solid rgb(5, 7, 136); */
-    max-width: 400px;
+.calculator-preorder-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+   }
+
+.calculator-section, .form-for-preorder {
+    flex: 1;
+    max-width: 480px;
     margin: 50px auto;
     padding: 20px;
+    text-align: center;
     background: white;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.calculator-section h2{
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 1.8rem;
     text-align: center;
+    margin-bottom: 15px;
 }
 
-.hydration-calculator h2{
-    font-size: 24px;
-    margin-bottom: 10px;
+
+.switch-tab{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+
 }
 
-.hydration-calculator p{
-    font-size: 1rem;
-    margin-bottom: 20px;
+
+.tab-btn{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-#weight{
+.tab-btn.active{
+    background: #0056b3;
+}
+
+.calculator-content{
+    display: none;
+}
+
+.calculator-content.active{
+    display: block;
+}
+.calculator-form input{
     padding: 10px;
+    margin: 5px;
+    width: 100%;
+    max-width: 300px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
-    margin: 10px 0;
-    width: 100%;
-    max-width: 200px;
+    
 }
 
-#hydra-cal{
-    padding: 10px 20px;
+.calculator-form button{
+    width:100%;
+    max-width: 250px;
+    padding: 14px 20px;
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s ease;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background 0.3s ease, transform 0.2s ease;
     margin-top: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-#hydra-cal:hover{
+.calculator-form button:hover{
     background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-#result{
+.calculator-form button:active{
+    transform: scale(0.98);
+}
+
+
+#result, #calorie-result{
   margin-top: 20px;
   font-size: 1.2rem;
   color: #28a745;
+}
+
+/* //mediaQuery */
+
+@media (max-width: 768px) {
+    .calculator-preorder-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculator-section, 
+    .form-for-preorder {
+        max-width: 100%; 
+        text-align: center;
+    }
 }
