@@ -1,0 +1,98 @@
+:root {
+    --bulma-primary: #3273dc;
+    --bulma-primary-light: #eef3fc;
+}
+
+h3 {
+    color: black !important;
+}
+
+.bulma-section {
+    padding: 4rem 0;
+    background: var(--bulma-primary-light);
+}
+
+.bulma-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    height: 100%;
+    border-radius: 6px !important;
+    overflow: hidden;
+}
+
+.bulma-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.2), 0 0 0 1px rgba(10,10,10,.02);
+}
+
+.card-image img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px 4px 0 0 !important;
+    object-position: center;
+}
+
+.card-content{
+    text-align: center !important;
+    padding: 1.5rem !important;
+}
+
+.title.is-5{
+    margin-bottom: 0.75rem !important;
+}
+
+.card-content p{
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #666;
+}
+
+.title.has-text-centered{
+    color: #3273dc !important;
+}
+.card-footer-item {
+    transition: color 0.2s ease;
+}
+
+.card-footer-item:hover {
+    color: var(--bulma-primary) !important;
+}
+
+
+
+
+
+
+
+.bootstrap-grid {
+    border-top: 2px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.testimonial-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.avatar-placeholder {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+    .column.is-4 {
+        padding: 0.75rem !important;
+    }
+    .card-content {
+        padding: 1rem !important;
+    }
+    .testimonial-card{
+        margin-bottom: 1rem;
+    }
+}

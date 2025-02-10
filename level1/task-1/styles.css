@@ -1,4 +1,4 @@
-@import "https://cdn.jsdelivr.net/npm/[email protected]/css/bulma.min.css";
+
 
 * {
     margin: 0;
@@ -9,48 +9,134 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: #ffffff;
 }
 
-nav {
+.custom-navbar{
+    background: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
     display: flex;
+    text-align: center;
     justify-content: flex-end;
-    position: absolute;
-    top: 8rem;
-    right: 2rem;
-    /* border: 2px solid black; */
-}
-
-.navigation-menu {
-    list-style: none;
-    display: flex;
-    gap:10px;
-    cursor: pointer;
+    position: fixed;
+    min-height: 70px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
     
 }
 
-.navigation-menu li {
-    display: inline;
+.nav-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007BFF;
 }
 
-.navigation-menu a {
+.navigation-menu{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.navigation-menu a{
     text-decoration: none;
-    color: white;
-    font-size: 18px;
-    padding: 8px 15px;
-    transition: background 0.3s ease, color 0.3s ease;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
 }
 
 .navigation-menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    color: #007BFF;
+} 
+
+.navigation-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007BFF;
+    transition: width 0.3s ease;
 }
+
+.navigation-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navigation-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+    }
+
+    .navigation-menu.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+ 
+
 
 header {
     background: url('unsplash.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 30vh;
+    min-height: 30vh;
     color: white;
     text-align: center;
     display: flex;
@@ -59,26 +145,12 @@ header {
     justify-content: center;
     padding: 0 20px;
     position: relative;
+    margin-top: 70px;
+    z-index: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    /* border: 2px solid red;  */
+   
 
 }
-
-/* header::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-} */
-
-/*header .header-content{
-    position: relative;
-    z-index: 2;
-} */
 
 header h1,
 header p {
@@ -100,14 +172,14 @@ header h1 {
     font-size: 2rem;
     font-weight: bold;
     color: white;
-    /* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); */
+    
 }
 
 header p {
     font-size: 1rem;
     margin-bottom: 15px;
     color: white;
-    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
+    
 }
 
 /* hero section */
@@ -149,13 +221,6 @@ header p {
     border-radius: 10px;
 }
 
-/* form */
-/* .form-for-preorder {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */
-
 .form-for-preorder h2 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -172,6 +237,7 @@ header p {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+   
 }
 
 .book {
@@ -244,7 +310,7 @@ header p {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    gap: 30px;
+    gap: 20px;
     max-width: 900px;
     margin: auto;
     padding: 20px;
@@ -265,7 +331,7 @@ header p {
 .calculator-section h2{
     word-break: break-word;
     overflow-wrap: break-word;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
     margin-bottom: 15px;
 }
@@ -313,6 +379,8 @@ header p {
     
 }
 
+
+
 .calculator-form button{
     width:100%;
     max-width: 250px;
@@ -358,4 +426,10 @@ header p {
         max-width: 100%; 
         text-align: center;
     }
+
+    .hero-section {
+        flex-direction: column;
+        padding: 20px;
+      }
 }
+

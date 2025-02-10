@@ -1,7 +1,28 @@
+// index.js (add navbar functionality)
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.navigation-menu');
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-container') && window.innerWidth <= 768) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+});
+
+
 //change the button color on click
 function colorChangeButton() {
     let button = document.querySelector(".color-btn");
-    let colors = ["rgba(255, 94, 0, 0.95)", "rgb(255, 105, 180)", "rgb(40, 167, 69)", "rgb(255, 193, 7)", "rgb(111, 66, 193)"]; 
+    let colors = ["rgb(255, 94, 0)", "rgb(255, 105, 180)", "rgb(40, 167, 69)", "rgb(255, 193, 7)", "rgb(111, 66, 193)"]; 
    
 
     let currentColor = window.getComputedStyle(button).backgroundColor;
@@ -63,27 +84,27 @@ function hydroCalculator(){
 // function to count calorie intake
 function calorieCalculator() {
 
-    let breakfast = document.getElementById("breakfast");
-    let lunch = document.getElementById("lunch");
-    let dinner = document.getElementById("dinner");
-    let snacks = document.getElementById("snacks");
+    let breakfastValue = document.getElementById("breakfast").value;
+    let lunchValue = document.getElementById("lunch").value;
+    let dinnerValue = document.getElementById("dinner").value;
+    let snacksValue = document.getElementById("snacks").value;
 
-    if(breakfast === "" && lunch === "" && dinner === "" && snacks === ""){
+    if(breakfastValue === "" && lunchValue === "" && dinnerValue === "" && snacksValue === ""){
         alert("Please enter at least one meal or snack!");
         return;
     }
-    breakfast = breakfast === "" ? 0 : Number(breakfast);
-    lunch = lunch === "" ? 0 : Number(lunch);
-    dinner = dinner === "" ? 0 : Number(dinner);
-    snacks = snacks === "" ? 0 : Number(snacks);
+    breakfastValue = breakfastValue === "" ? 0 : Number(breakfastValue);
+    lunchValue = lunchValue === "" ? 0 : Number(lunchValue);
+    dinnerValue = dinnerValue === "" ? 0 : Number(dinnerValue);
+    snacksValue = snacksValue === "" ? 0 : Number(snacksValue);
 
-    if(breakfast < 0 || lunch < 0 || dinner < 0 || snacks < 0)
+    if(breakfastValue < 0 || lunchValue < 0 || dinnerValue < 0 || snacksValue < 0)
    {
     alert("Please enter valid non-negative numbers for calories.");
     return;
    }
 
-   const totalCalories = breakfast + lunch + dinner + snacks;
+   const totalCalories = breakfastValue + lunchValue + dinnerValue + snacksValue;
 
    document.getElementById("calorie-result").innerHTML = `Your total calorie intake today is <strong>${totalCalories} kcal</strong>.`;
 }
