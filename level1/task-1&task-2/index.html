@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydroMax Bottle</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f141e1b7ac.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="custom-navbar">
+            <div class="nav-container">
+                <div class="logo">HydroMax</div>
+                <ul class="navigation-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </nav>
+        <div class="header-content">
+            <h1>Stay Hydrated, Anytime, Anywhere</h1>
+            <p>The Perfect Water Bottle for Your Active Lifestyle</p>
+
+        </div>
+
+    </header>
+    <p id="greeting-message"></p>
+    <main>
+        <section class="hero-section">
+            <div class="para">
+                <p>Stay Hydrated effortlessly with this amazing water bottle! It's completely leak-proof, making it
+                    perfect
+                    for your busy life.
+                    Plus, the time markers make it easy to sip throughout the day and ensure you're drinking enough
+                    water.
+                </p>
+                <button class="color-btn" onclick="colorChangeButton()">Discover HydroMax <i
+                        class="fas fa-arrow-down"></i></button>
+            </div>
+            <div class="image1">
+                <img src="sipper-water-bottle.jpg" alt="HydroMax Water Bottle with Time Markers" width="400"
+                    loading="lazy">
+            </div>
+        </section>
+             
+        <!-- level3-task1 -->
+        <section class="image-gallery">
+          <h2>Product Gallery</h2>
+          <div class="gallery-container">
+            <a href="#imgg1" class="thumbnail">
+                <img src="img_gallery1.jpg" alt="HydroMax babypink" loading="lazy">
+            </a>
+            <a href="#imgg2" class="thumbnail">
+                <img src="img_gallery2.jpg" alt="HydroMax black" loading="lazy">
+            </a>
+            <a href="#imgg3" class="thumbnail">
+                <img src="img_gallery3.jpg" alt="HydroMax skyblue-orange" loading="lazy">
+            </a>
+            <a href="#imgg4" class="thumbnail">
+                <img src="img_gallery4.jpg" alt="HydroMax skyblue-babypink" loading="lazy">
+            </a>
+          </div>
+
+          <div class="lightbox" id="imgg1">
+            <img src="img_gallery1.jpg" alt="HydroMax baby-pink">
+            <a href="#close" class="close-btn">&times;</a>
+          </div>
+          <div class="lightbox" id="imgg2">
+            <img src="img_gallery2.jpg" alt="HydroMax baby-pink">
+            <a href="#close" class="close-btn">&times;</a>
+          </div>
+          <div class="lightbox" id="imgg3">
+            <img src="img_gallery3.jpg" alt="HydroMax baby-pink">
+            <a href="#close" class="close-btn">&times;</a>
+          </div>
+          <div class="lightbox" id="imgg4">
+            <img src="img_gallery4.jpg" alt="HydroMax baby-pink">
+            <a href="#close" class="close-btn">&times;</a>
+          </div>
+
+        </section>
+
+
+        <div class="calculator-preorder-container">
+
+
+            <section class="calculator-section">
+                <h2>Hydration & Calorie Tracker</h2>
+
+                <!-- tab button -->
+                <div class="switch-tab">
+                    <button class="tab-btn active" onclick="switchTab('hydration')">Hydration</button>
+                    <button class="tab-btn" onclick="switchTab('calorie')">Calorie Intake</button>
+                </div>
+
+                <!--Hydration calculator-->
+                <div id="hydration-calculator" class="calculator-content active">
+                    <p>Find out how much water you should drink daily based on your weight</p>
+                    <form class="calculator-form">
+                        <label for="weight">Your Weight (kg):</label>
+                        <input type="number" id="weight" class="labelFor" placeholder="Enter your weight" required>
+                        <button type="button" id="hydra-cal" onclick="hydroCalculator()">Calculate</button>
+                    </form>
+                    <p id="result"></p>
+                </div>
+
+                <!--Calorie Intake Calculator-->
+                <div id="calorie-calculator" class="calculator-content">
+                    <p>Track your daily calorie intake</p>
+                    <form class="calculator-form">
+                        <input type="number" id="breakfast" placeholder="Breakfast Calories">
+                        <input type="number" id="lunch" placeholder="Lunch Calories">
+                        <input type="number" id="dinner" placeholder="Dinner Calories">
+                        <input type="number" id="snacks" placeholder="Snacks Calories">
+                        <button type="button" id="cal-cal" onclick="calorieCalculator()">Calculate</button>
+
+                    </form>
+                    <p id="calorie-result"></p>
+                </div>
+
+
+            </section>
+
+            <section class="form-for-preorder">
+                <h2>Pre-Order Now!</h2>
+                <p>Be the first to get your HydroMax Bottle when it launches.</p>
+                <form class="form1" action="#" method="post">
+                    <input class="user-mail" type="email" placeholder="Enter your email" required>
+                    <button class="book" type="submit"> 🚀 Book Now</button>
+                </form>
+            </section>
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+</body>
+
+</html>

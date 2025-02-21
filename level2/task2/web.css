@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    
 }
 
 body {
@@ -16,9 +16,9 @@ body {
     background: #ffffff !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
-    display: flex;
+    /* display: flex;
     text-align: center;
-    justify-content: flex-end;
+    justify-content: flex-end; */
     position: fixed;
     min-height: 70px;
     width: 100%;
@@ -136,7 +136,7 @@ header {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 30vh;
+    min-height: 50vh;
     color: white;
     text-align: center;
     display: flex;
@@ -347,8 +347,8 @@ header p {
 
 
 .tab-btn{
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
     background: #007BFF;
@@ -376,6 +376,7 @@ header p {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    min-width: auto;
     
 }
 
@@ -416,6 +417,10 @@ header p {
 /* //mediaQuery */
 
 @media (max-width: 768px) {
+    header{
+        min-height: 70vh;
+        background-position: 75% center;
+    }
     .calculator-preorder-container {
         flex-direction: column;
         align-items: center;
@@ -430,6 +435,12 @@ header p {
     .hero-section {
         flex-direction: column;
         padding: 20px;
+        margin: 20px auto;
+        gap: 20px;
+      }
+      .hero-section .para{
+        font-size: 1rem;
+        padding: 10px;
       }
 }
 
