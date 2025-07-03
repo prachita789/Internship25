@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HydroMax Bottle</title>
+    <title>HydroMax | Stay Hydrated</title>
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 
@@ -16,30 +16,25 @@
 
 <body>
 
-    <header>
-        <nav class="custom-navbar">
-            <div class="nav-container">
-                <div class="logo">HydroMax</div>
-                <ul class="navigation-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <button class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
 
-        </nav>
-        <div class="header-content">
-            <h1>Stay Hydrated, Anytime, Anywhere</h1>
-            <p>The Perfect Water Bottle for Your Active Lifestyle</p>
-
+    <nav class="custom-navbar">
+        <div class="nav-container">
+            <div class="logo">HydroMax</div>
+            <ul class="navigation-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
+    </nav>
 
-    </header>
+
+
     <p id="greeting-message"></p>
     <main>
         <section class="hero-section">
@@ -58,57 +53,53 @@
                     loading="lazy">
             </div>
         </section>
-             
+
         <!-- level3-task1 -->
         <section class="image-gallery">
-          <h2>Product Gallery</h2>
-          <div class="gallery-container">
-            <a href="#imgg1" class="thumbnail">
-                <img src="img_gallery1.jpg" alt="HydroMax babypink" loading="lazy">
-            </a>
-            <a href="#imgg2" class="thumbnail">
-                <img src="img_gallery2.jpg" alt="HydroMax black" loading="lazy">
-            </a>
-            <a href="#imgg3" class="thumbnail">
-                <img src="img_gallery3.jpg" alt="HydroMax skyblue-orange" loading="lazy">
-            </a>
-            <a href="#imgg4" class="thumbnail">
-                <img src="img_gallery4.jpg" alt="HydroMax skyblue-babypink" loading="lazy">
-            </a>
-          </div>
+            <h2>Product Gallery</h2>
+            <div class="gallery-container">
+                <a href="#imgg1" class="thumbnail">
+                    <img src="img_gallery1.jpg" alt="HydroMax babypink" loading="lazy">
+                </a>
+                <a href="#imgg2" class="thumbnail">
+                    <img src="img_gallery2.jpg" alt="HydroMax black" loading="lazy">
+                </a>
+                <a href="#imgg3" class="thumbnail">
+                    <img src="img_gallery3.jpg" alt="HydroMax skyblue-orange" loading="lazy">
+                </a>
+                <a href="#imgg4" class="thumbnail">
+                    <img src="img_gallery4.jpg" alt="HydroMax skyblue-babypink" loading="lazy">
+                </a>
+            </div>
 
-          <div class="lightbox" id="imgg1">
-            <img src="img_gallery1.jpg" alt="HydroMax baby-pink">
-            <a href="#close" class="close-btn">&times;</a>
-          </div>
-          <div class="lightbox" id="imgg2">
-            <img src="img_gallery2.jpg" alt="HydroMax baby-pink">
-            <a href="#close" class="close-btn">&times;</a>
-          </div>
-          <div class="lightbox" id="imgg3">
-            <img src="img_gallery3.jpg" alt="HydroMax baby-pink">
-            <a href="#close" class="close-btn">&times;</a>
-          </div>
-          <div class="lightbox" id="imgg4">
-            <img src="img_gallery4.jpg" alt="HydroMax baby-pink">
-            <a href="#close" class="close-btn">&times;</a>
-          </div>
+            <div class="lightbox" id="imgg1">
+                <img src="img_gallery1.jpg" alt="HydroMax baby-pink">
+                <a href="#close" class="close-btn">&times;</a>
+            </div>
+            <div class="lightbox" id="imgg2">
+                <img src="img_gallery2.jpg" alt="HydroMax baby-pink">
+                <a href="#close" class="close-btn">&times;</a>
+            </div>
+            <div class="lightbox" id="imgg3">
+                <img src="img_gallery3.jpg" alt="HydroMax baby-pink">
+                <a href="#close" class="close-btn">&times;</a>
+            </div>
+            <div class="lightbox" id="imgg4">
+                <img src="img_gallery4.jpg" alt="HydroMax baby-pink">
+                <a href="#close" class="close-btn">&times;</a>
+            </div>
 
         </section>
 
-
-        <div class="calculator-preorder-container">
-
-
+        <h2 class="section-heading">Hydration & Calorie Tools</h2>
+        <div class="calculator-wrapper">
             <section class="calculator-section">
                 <h2>Hydration & Calorie Tracker</h2>
-
                 <!-- tab button -->
                 <div class="switch-tab">
                     <button class="tab-btn active" onclick="switchTab('hydration')">Hydration</button>
                     <button class="tab-btn" onclick="switchTab('calorie')">Calorie Intake</button>
                 </div>
-
                 <!--Hydration calculator-->
                 <div id="hydration-calculator" class="calculator-content active">
                     <p>Find out how much water you should drink daily based on your weight</p>
@@ -119,41 +110,55 @@
                     </form>
                     <p id="result"></p>
                 </div>
-
                 <!--Calorie Intake Calculator-->
                 <div id="calorie-calculator" class="calculator-content">
                     <p>Track your daily calorie intake</p>
-                    <form class="calculator-form">
-                        <input type="number" id="breakfast" placeholder="Breakfast Calories">
-                        <input type="number" id="lunch" placeholder="Lunch Calories">
-                        <input type="number" id="dinner" placeholder="Dinner Calories">
-                        <input type="number" id="snacks" placeholder="Snacks Calories">
-                        <button type="button" id="cal-cal" onclick="calorieCalculator()">Calculate</button>
+                    <div
+                        style="background: #f0f8ff; padding: 12px 18px; border-radius: 8px; margin-bottom: 16px; color: #333; font-size: 0.95rem;">
+                        <strong>💡 Tip:</strong> Estimate your calories from food. Examples:
+                        <ul style="margin-top: 8px; padding-left: 18px;">
+                            <li>🍳 2 eggs = 150 kcal</li>
+                            <li>🍞 2 slices bread = 140 kcal</li>
+                            <li>🍚 1 cup rice = 200 kcal</li>
+                            <li>🥛 1 glass milk = 120 kcal</li>
+                            <li>☕ Tea + 2 biscuits = 100 kcal</li>
+                        </ul>
+                        <p style="margin-top: 10px;">
+                            Not sure? <a href="https://www.nutritionix.com" target="_blank"
+                                style="color:#007BFF;">Look up calories here</a>.
+                        </p>
+                    </div>
 
+                    <form class="calculator-form">
+                        <input type="number" id="breakfast" placeholder="Breakfast (e.g., 350 for eggs + toast)">
+                        <input type="number" id="lunch" placeholder="Lunch (e.g., 600 for rice + curry)">
+                        <input type="number" id="dinner" placeholder="Dinner (e.g., 500 for chapati + sabji)">
+                        <input type="number" id="snacks" placeholder="Snacks (e.g., 200 for tea + biscuits)">
+                        <button type="button" id="cal-cal" onclick="calorieCalculator()">Calculate</button>
                     </form>
                     <p id="calorie-result"></p>
+                    <p id="calorie-result"></p>
+                    <p id="recommended-output" class="calorie-reference"></p>
                 </div>
-
-
             </section>
-
             <section class="form-for-preorder">
                 <h2>Pre-Order Now!</h2>
                 <p>Be the first to get your HydroMax Bottle when it launches.</p>
-                <form class="form1" action="#" method="post">
+                <form class="form1" id="preorder-form" action="#" method="post">
                     <input class="user-mail" type="email" placeholder="Enter your email" required>
                     <button class="book" type="submit"> 🚀 Book Now</button>
                 </form>
+                <div id="preorder-success"
+                    style="display:none; color:green; margin-top:10px; font-weight:500; text-align:center;">Thank you
+                    for pre-ordering! We'll notify you when HydroMax launches.</div>
             </section>
         </div>
 
 
-
     </main>
-
-
-
-
+    <footer class="site-footer">
+        <p>&copy; 2025 HydroMax Bottle. All rights reserved. | <a href="#">Contact Us</a></p>
+    </footer>
 
 </body>
 
